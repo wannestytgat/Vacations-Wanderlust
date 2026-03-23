@@ -6,7 +6,6 @@
   <title>Wanderlust — Vakantiebestemmingen</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <!-- Leaflet kaart bibliotheek -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
@@ -34,26 +33,66 @@
     <div class="scroll-hint">scroll</div>
   </section>
 
-  <!-- BESTEMMINGEN GRID -->
+  <!-- BESTEMMINGEN SECTIE -->
   <section class="section" id="bestemmingen">
     <div class="section-header">
       <span class="section-tag">Populaire keuzes</span>
       <h2 class="section-title">Kies jouw<br/>bestemming</h2>
+
+      <!-- ZOEKBALK -->
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Zoek op stad of land..."
+          oninput="filterDestinations()"
+        />
+        <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+      </div>
+
+      <!-- CONTINENT FILTERS -->
+      <div class="filter-buttons">
+        <button class="filter-btn active" onclick="setFilter('alle', this)">Alle</button>
+        <button class="filter-btn" onclick="setFilter('Europa', this)">🌍 Europa</button>
+        <button class="filter-btn" onclick="setFilter('Azië', this)">🌏 Azië</button>
+        <button class="filter-btn" onclick="setFilter('Afrika', this)">🌍 Afrika</button>
+        <button class="filter-btn" onclick="setFilter('Amerika', this)">🌎 Amerika</button>
+      </div>
     </div>
-    <div class="destinations-grid" id="destinationsGrid">
-      <!-- Kaarten worden door JavaScript ingeladen -->
-    </div>
+
+    <!-- Geen resultaten melding -->
+    <p class="no-results" id="noResults" style="display:none;">
+      Geen bestemmingen gevonden voor "<span id="noResultsQuery"></span>"
+    </p>
+
+    <div class="destinations-grid" id="destinationsGrid"></div>
   </section>
 
   <!-- DETAIL MODAL -->
   <div class="modal-overlay" id="modalOverlay">
     <div class="modal" id="modal">
       <button class="modal-close" id="modalClose">✕</button>
-      <div class="modal-hero" id="modalHero"></div>
+
+      <!-- Foto bovenaan modal -->
+      <div class="modal-hero" id="modalHero">
+        <img class="modal-hero-img" id="modalHeroImg" src="" alt="" />
+      </div>
+
       <div class="modal-body">
         <div class="modal-flag" id="modalFlag"></div>
         <h2 class="modal-title" id="modalTitle"></h2>
         <p class="modal-subtitle" id="modalSubtitle"></p>
+
+        <!-- LIVE WEER WIDGET -->
+        <div class="weather-widget" id="weatherWidget">
+          <div class="weather-loading" id="weatherLoading">
+            <span class="weather-spinner"></span> Live weer laden...
+          </div>
+          <div class="weather-data" id="weatherData" style="display:none;"></div>
+        </div>
+
         <div class="modal-stats" id="modalStats"></div>
         <p class="modal-desc" id="modalDesc"></p>
         <div class="modal-highlights" id="modalHighlights"></div>
@@ -75,7 +114,7 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-logo">✦ Wanderlust</div>
-    <p>Gebouwd met ❤️ voor reizigers</p>
+    <p>Gebouwd met ❤️ voor reizigers · Weer via <a href="https://open-meteo.com" target="_blank" style="color:var(--gold)">Open-Meteo</a></p>
   </footer>
 
   <script src="script.js"></script>
