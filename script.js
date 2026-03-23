@@ -177,6 +177,48 @@ const destinations = [
     tip: "Vermijd het dragen van dure sieraden en houd je waardevolle spullen uit het zicht — wees bewust van je omgeving.",
     lat: -22.9068,
     lng: -43.1729
+  },
+  {
+    id: 8,
+    name: "Tokyo",
+    country: "Japan",
+    continent: "Azië",
+    flag: "🇯🇵",
+    color: "#c0392b",
+    photo: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80",
+    description: "Tokyo is een duizelingwekkende metropool waar futuristische technologie en eeuwenoude tradities hand in hand gaan. Van de neonlichten van Shinjuku tot de vredige tempels van Asakusa — geen stad ter wereld combineert zo veel contrasten op zo'n kleine oppervlakte.",
+    stats: { temp: "20°C", flight: "11u 30m", budget: "€€€" },
+    highlights: [
+      "Shibuya Crossing — drukste zebrapad ter wereld",
+      "Senso-ji tempel in Asakusa",
+      "Uitzicht op de Fuji vanuit Hakone",
+      "Tsukiji vismarkt & sushi ontbijt",
+      "Akihabara — elektronicawijk & anime"
+    ],
+    tip: "Koop een IC-kaart (Suica of Pasmo) voor het openbaar vervoer — werkt op alle metro's, bussen en treinen in de stad.",
+    lat: 35.6762,
+    lng: 139.6503
+  },
+  {
+    id: 9,
+    name: "Kaapstad",
+    country: "Zuid-Afrika",
+    continent: "Afrika",
+    flag: "🇿🇦",
+    color: "#16a085",
+    photo: "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&q=80",
+    description: "Kaapstad is misschien wel de mooiste stad van Afrika. Omringd door de Tafelberg, twee oceanen en wereldberoemde wijnlanden combineert de stad adembenemende natuur met een rijke cultuur, levendig eten en een bewogen geschiedenis.",
+    stats: { temp: "22°C", flight: "11u 00m", budget: "€€" },
+    highlights: [
+      "Tafelberg — kabelbaan of wandelen",
+      "Kaap de Goede Hoop — zuidpunt van Afrika",
+      "Boulders Beach — pinguïns spotten",
+      "Wijnroute in Stellenbosch",
+      "Robbeneiland — Nelson Mandela's gevangenis"
+    ],
+    tip: "Huur een auto — het is verreweg de beste manier om de Kaapse schiereiland en wijnlanden te verkennen.",
+    lat: -33.9249,
+    lng: 18.4241
   }
 ];
 
